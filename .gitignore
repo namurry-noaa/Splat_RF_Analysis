@@ -52,7 +52,8 @@ __pycache__/
 build/
 dist/
 
-# --- Session handoff (private) ----------------------------------------------
+# Session summary — local working notes, never committed
+*_summary.md
 *_summary.claude
 
 # --- OS / editor cruft ------------------------------------------------------
