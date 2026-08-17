@@ -23,6 +23,27 @@ database:
   # with other GIS work in the same database.
   schema: rf_analysis
 
-  # SRID for stored geometry. 4326 (WGS84 lat/lon) matches SRTM natively.
-  # Reproject on the fly for distance/area ops as needed.
+  # SRID for stored geometry. 4326 (WGS84 lat/lon) matches SRTM/NASADEM
+  # natively. Reproject on the fly for distance/area ops as needed.
   srid: 4326
+
+# ============================================================================
+# SPLAT! engine + terrain paths
+# ----------------------------------------------------------------------------
+# Per this machine's "big data lives on /data, not in git repos" rule, terrain
+# is stored OUTSIDE the repo. The toolchain points here rather than at the
+# repo's (gitignored) data/ dirs. Terrain is NASADEM 1-arc-second (~30m),
+# converted with srtm2sdf-hd, so we use the HD engine.
+# ============================================================================
+splat:
+  # HD engine to match 1-arc-second NASADEM tiles (srtm2sdf-hd output).
+  binary: splat-hd            # use `splat` only for 3-arc-second (~90m) data
+  # Directory of converted .sdf terrain tiles (what SPLAT! reads via -d).
+  sdf_dir: /data/splat/sdf
+  # Raw NASADEM .hgt tiles (source; kept for re-conversion / new tile adds).
+  hgt_dir: /data/splat/hgt
+  # Working/scratch dir for generated .qth/.lrp inputs and outputs.
+  work_dir: /home/mv57/Radio/splat
+  # SPLAT! longitude convention QUIRK: WEST is POSITIVE. The wrapper converts
+  # standard negative-west lon (in sites config) to SPLAT's +west for .qth.
+  west_positive_longitude: true
