@@ -1,0 +1,68 @@
+# ============================================================================
+# bands.example.yml  --  Frequency / service band presets
+# ----------------------------------------------------------------------------
+# COPY to bands.local.yml and adjust. Bands are largely generic (frequencies
+# are public), so this file is safer to keep, but personal notes/tuning belong
+# in the .local copy.
+#
+# ARCHITECTURE NOTE:
+#   The propagation ENGINE (Longley-Rice / ITM in SPLAT!) takes frequency as a
+#   parameter -- it is NOT a different model per band. What genuinely differs
+#   by frequency and is applied as a SEPARATE correction layer:
+#     * Fresnel zone size (scales with wavelength)
+#     * Foliage / clutter attenuation  <-- band-specific empirical model
+#       (ITU-R P.833 vegetation, or Weissberger / COST-235). See models/.
+#   So: one ITM engine + per-band presets here + a foliage correction layer.
+# ============================================================================
+
+bands:
+  gmrs:
+    description: "GMRS repeater / simplex (462/467 MHz)"
+    frequency_mhz: 462.6      # representative; per-channel handled in runs
+    # SPLAT! Longley-Rice (.lrp) parameters:
+    ground_dielectric: 15     # avg ground
+    ground_conductivity: 0.005
+    atmospheric_bending: 301  # N-units (avg continental)
+    radio_climate: 5          # 5 = continental temperate
+    polarization: 1           # 0=horizontal, 1=vertical (FM = vertical)
+    fraction_of_time: 0.9
+    fraction_of_situations: 0.9
+    # Foliage correction model to apply on top of ITM for this band:
+    foliage_model: itu_p833   # options: itu_p833 | weissberger | none
+
+  uhf_70cm:
+    description: "70cm amateur (420-450 MHz)"
+    frequency_mhz: 446.0
+    ground_dielectric: 15
+    ground_conductivity: 0.005
+    atmospheric_bending: 301
+    radio_climate: 5
+    polarization: 1
+    fraction_of_time: 0.9
+    fraction_of_situations: 0.9
+    foliage_model: itu_p833
+
+  vhf_2m:
+    description: "2m amateur (144-148 MHz)"
+    frequency_mhz: 146.0
+    ground_dielectric: 15
+    ground_conductivity: 0.005
+    atmospheric_bending: 301
+    radio_climate: 5
+    polarization: 1
+    fraction_of_time: 0.9
+    fraction_of_situations: 0.9
+    # Lower freq: larger Fresnel zones, better diffraction, less foliage loss.
+    foliage_model: weissberger
+
+  vhf_hi_rail:
+    description: "VHF-hi rail / AAR (~160-161 MHz)"
+    frequency_mhz: 161.0
+    ground_dielectric: 15
+    ground_conductivity: 0.005
+    atmospheric_bending: 301
+    radio_climate: 5
+    polarization: 1
+    fraction_of_time: 0.9
+    fraction_of_situations: 0.9
+    foliage_model: weissberger

@@ -1,0 +1,70 @@
+# ============================================================================
+# .gitignore  --  Splat_RF_Analysis
+# ============================================================================
+# Design principle: OPEN TOOL / PRIVATE REGIONAL DATA.
+# The reusable tooling (SPLAT! orchestration, PostGIS schema, foliage models,
+# tile fetchers) is public-friendly. The user's specific site coordinates,
+# operating locations, callsign, and DB credentials are PRIVATE and must never
+# be committed. Structure enforces this: real config lives in *.local.* files
+# and a gitignored data/ tree; only *.example templates are tracked.
+# ============================================================================
+
+# --- PRIVATE regional / operational config (NEVER COMMIT) -------------------
+# Real site coordinates, relay spots, callsign, ERP, DB credentials live here.
+# Only the *.example templates are tracked (see !exceptions below).
+config/*.local.yml
+config/*.local.yaml
+config/*.local.ini
+config/secrets*
+.env
+
+# --- Terrain data (large, reproducible from public SRTM sources) ------------
+# SRTM .hgt tiles and derived SPLAT! .sdf files are large and re-fetchable.
+# Do not bloat the repo; the fetcher script reproduces them.
+data/srtm/*
+data/sdf/*
+!data/srtm/.gitkeep
+!data/sdf/.gitkeep
+*.hgt
+*.hgt.zip
+*.sdf
+*.sdf.gz
+
+# --- Generated analysis outputs (reproducible) ------------------------------
+# Path profiles, coverage maps, KML overlays -- regenerate on demand.
+outputs/*
+!outputs/.gitkeep
+*.ppm
+*.png
+*.kml
+*.kmz
+# SPLAT! scratch/report artifacts
+*.qth
+*.lrp
+*.scf
+*-site_report.txt
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+build/
+dist/
+
+# --- Session handoff (private) ----------------------------------------------
+*_summary.claude
+
+# --- OS / editor cruft ------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ============================================================================
+# EXCEPTIONS -- templates that MUST be tracked (order matters; after ignores)
+# ============================================================================
+!config/sites.example.yml
+!config/antennas.example.yml
+!config/bands.example.yml
+!config/database.example.yml

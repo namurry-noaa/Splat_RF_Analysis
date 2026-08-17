@@ -1,0 +1,32 @@
+name: splat_rf
+# Conda environment for the Splat_RF_Analysis toolchain.
+#   conda env create -f environment.yml
+#   conda activate splat_rf
+#
+# NOTE: SPLAT! itself is a system binary (apt: `splat`, `splat-hd`), NOT a
+# Python package. This env is the Python orchestration + GIS + PostGIS layer
+# that drives SPLAT! and reads/writes the local PostGIS instance.
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  # --- Core scientific ---
+  - numpy
+  - scipy
+  # --- Geospatial ---
+  - gdal            # SRTM/DEM handling, matches system gdalinfo/gdal_translate
+  - rasterio        # raster (DEM, coverage) read/write
+  - shapely         # geometry
+  - geopandas       # vector geometry + IO
+  - pyproj          # projections / datum transforms
+  # --- PostGIS connectivity ---
+  - psycopg2        # PostgreSQL/PostGIS driver
+  - sqlalchemy      # DB abstraction / ORM-lite for schema mgmt
+  - geoalchemy2     # spatial types for SQLAlchemy <-> PostGIS
+  # --- Config / IO ---
+  - pyyaml          # YAML config (sites/antennas/bands presets)
+  - requests        # SRTM tile fetching
+  - click           # CLI entry points for the wrapper
+  # --- Dev ---
+  - pytest
+  - pip

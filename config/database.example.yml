@@ -1,0 +1,28 @@
+# ============================================================================
+# database.example.yml  --  PostGIS connection template
+# ----------------------------------------------------------------------------
+# COPY to database.local.yml and fill in real values. The .local.yml file is
+# gitignored and NEVER committed. Do NOT put credentials in this template.
+#
+# Local instance discovered during setup: PostgreSQL with PostGIS 3.6.4.
+# Existing GIS database: `gis_dev`. You may use it or create a dedicated DB.
+# ============================================================================
+
+database:
+  host: localhost
+  port: 5432
+  # Recommended: a dedicated DB for RF analysis, OR reuse gis_dev with a
+  # dedicated schema (see `schema` below) to keep RF layers namespaced.
+  dbname: gis_dev
+  user: mv57
+  # Prefer PGPASSWORD env / ~/.pgpass over storing here. Leave blank to use
+  # peer/ident or .pgpass auth.
+  password: ""
+
+  # Namespace all RF analysis tables under this schema so they don't collide
+  # with other GIS work in the same database.
+  schema: rf_analysis
+
+  # SRID for stored geometry. 4326 (WGS84 lat/lon) matches SRTM natively.
+  # Reproject on the fly for distance/area ops as needed.
+  srid: 4326

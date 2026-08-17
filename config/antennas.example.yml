@@ -1,0 +1,52 @@
+# ============================================================================
+# antennas.example.yml  --  Antenna presets
+# ----------------------------------------------------------------------------
+# COPY to antennas.local.yml and adjust. Antenna specs are from public
+# datasheets, so this is largely shareable. Real installed heights above
+# ground for YOUR sites belong with the site definitions (sites.local.yml).
+#
+# gain_dbd    : gain in dBd (dBi - 2.15). SPLAT! ERP uses dBd-derived power.
+# pattern     : "omni" | "yagi" | "collinear"
+# azimuth_deg : boresight bearing for directional antennas (true north)
+# beamwidth_h : azimuth (horizontal-plane) beamwidth, degrees
+# fb_ratio_db : front-to-back ratio
+# polarization: matches band; FM = vertical
+# ============================================================================
+
+antennas:
+  laird_y4503:
+    description: "Laird Y4503 3-el UHF Yagi, 450-470 MHz"
+    pattern: yagi
+    gain_dbd: 7.1            # 9.3 dBi
+    beamwidth_h: 114         # azimuth beamwidth in VERTICAL polarization (per datasheet)
+    fb_ratio_db: 17
+    polarization: vertical
+    freq_range_mhz: [450, 470]
+    # azimuth_deg is per-install; set in sites.local.yml
+
+  maxrad_mbx450:
+    description: "Maxrad MBX450-class no-ground-plane collinear omni, UHF"
+    pattern: collinear
+    gain_dbd: 5.5            # ~5-6 dBd typical; verify exact model
+    beamwidth_h: 360
+    fb_ratio_db: 0
+    polarization: vertical
+    freq_range_mhz: [450, 470]
+
+  generic_quarter_wave:
+    description: "Generic 1/4-wave whip (broadband reference)"
+    pattern: omni
+    gain_dbd: 0.0
+    beamwidth_h: 360
+    fb_ratio_db: 0
+    polarization: vertical
+    freq_range_mhz: [400, 500]
+
+  nmo_58_uhf:
+    description: "5/8-wave NMO mobile whip, UHF"
+    pattern: omni
+    gain_dbd: 3.0
+    beamwidth_h: 360
+    fb_ratio_db: 0
+    polarization: vertical
+    freq_range_mhz: [440, 470]

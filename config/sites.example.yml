@@ -1,0 +1,65 @@
+# ============================================================================
+# sites.example.yml  --  Site / transmitter definitions   *** TEMPLATE ***
+# ----------------------------------------------------------------------------
+# COPY to sites.local.yml and fill in REAL coordinates. sites.local.yml is
+# GITIGNORED -- your actual operating locations are PRIVATE and must never be
+# committed to a public repo.
+#
+# Fields:
+#   lat, lon            : decimal degrees, WGS84 (SRTM-native). NEGATIVE lon
+#                         for western hemisphere.
+#   ground_elev_m       : optional; SPLAT! derives from terrain if omitted.
+#   antenna_height_m    : height of antenna ABOVE GROUND at this site (AGL).
+#                         *** This is the dominant variable for UHF LOS. ***
+#   antenna             : key referencing antennas.local.yml
+#   azimuth_deg         : boresight bearing (true N) for directional antennas
+#   erp_watts           : effective radiated power
+#   band                : key referencing bands.local.yml
+#   role                : "repeater" | "relay" | "mobile" | "target" | "candidate"
+# ============================================================================
+
+sites:
+  # --- Example: fixed repeater candidate (the low-mast / wooded scenario) ---
+  home_repeater:
+    description: "Fixed repeater candidate (roofline-limited height)"
+    lat: 00.00000            # <-- REAL VALUE in sites.local.yml
+    lon: -00.00000
+    antenna_height_m: 6.0    # ~feet-above-roofline reality; height-limited
+    antenna: laird_y4503
+    azimuth_deg: 315         # pointed NW toward the wooded AOI
+    erp_watts: 45
+    band: gmrs
+    role: repeater
+
+  # --- Example: distant repeater we want to reach (riverside) ---
+  riverside_repeater:
+    description: "Distant GMRS repeater to relay from"
+    lat: 00.00000
+    lon: -00.00000
+    antenna_height_m: 15.0
+    antenna: maxrad_mbx450
+    erp_watts: 45
+    band: gmrs
+    role: target
+
+  # --- Example: mobile relay parking-spot candidate ---
+  relay_spot_a:
+    description: "Candidate RAV4 relay position w/ shot at riverside"
+    lat: 00.00000
+    lon: -00.00000
+    antenna_height_m: 2.0    # roof NMO on vehicle
+    antenna: nmo_58_uhf
+    erp_watts: 25
+    band: gmrs
+    role: candidate
+
+  # --- Example: the area of interest / far endpoint ---
+  wooded_aoi:
+    description: "Wooded AOI ~5mi out, hilly, deep target"
+    lat: 00.00000
+    lon: -00.00000
+    antenna_height_m: 1.5    # HT at head height
+    antenna: generic_quarter_wave
+    erp_watts: 5
+    band: gmrs
+    role: target
