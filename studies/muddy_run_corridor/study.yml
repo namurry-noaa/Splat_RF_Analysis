@@ -1,0 +1,79 @@
+# ============================================================================
+# Muddy Run Corridor Study -- mobile repeat coverage along the Susquehanna
+# ----------------------------------------------------------------------------
+# Reproducible definition of the analysis: comm wagon (mobile cross/same-band
+# repeat) at Muddy Run / Wissler riverside, radiating to an HT carried along
+# the Lancaster-side rail/river corridor, N and S. Coordinates are a public
+# park + DEM-traced river channel -- safe to commit.
+# ============================================================================
+
+study:
+  name: muddy_run_corridor
+  description: >
+    Mobile repeat coverage to an HT hiking the Lancaster-side Susquehanna
+    rail corridor N/S from the comm wagon at Muddy Run (Wissler) riverside.
+  date: 2026-08-17
+
+# Transmitter: the comm wagon (mobile repeat output leg the HT hears).
+wagon:
+  lat: 39.8059656
+  lon: -76.2963533          # standard negative-west; SPLAT uses +west internally
+  antenna_height_m: 2.0     # roof/fender NMO above ground, vehicle
+  ground_elev_m_amsl: 40    # from DEM (deep valley floor; -102 m below avg terrain)
+
+# HT receiver assumption along the corridor.
+rx:
+  antenna_height_m: 1.5     # head height
+  role: receiver
+
+# Bands analyzed (each a separate run). ERP/antenna per the comm-wagon install.
+bands:
+  gmrs:
+    frequency_mhz: 462.6
+    erp_watts: 45
+    antenna: laird_c150_450c     # fender collinear, ~-j1.2 ohm (near resonance)
+    foliage_model: weissberger
+  vhf_2m:
+    frequency_mhz: 146.1
+    erp_watts: 50
+    antenna: antenex_b1443       # roof 5/8 wave, +j0.8 ohm at 146.1
+    foliage_model: weissberger
+  vhf_aar:
+    frequency_mhz: 161.0
+    erp_watts: 55
+    antenna: laird_c150_450c     # fender collinear
+    foliage_model: weissberger
+
+# ITWOM / Longley-Rice environment (all bands, vertical FM).
+itwom:
+  earth_dielectric: 15
+  earth_conductivity: 0.005
+  atmospheric_bending_n: 301
+  radio_climate: 5             # continental temperate
+  polarization: 1              # vertical
+  fraction_of_situations: 0.90
+  fraction_of_time: 0.90
+
+# Corridor tracing (DEM low-ground follower). See splat_rf/corridor/trace.py.
+corridor:
+  dem_hgt: /data/splat/hgt/N39W077.hgt
+  step_m: 250
+  waypoint_every_m: 1000
+  max_dist_m: 8000
+  north_base_bearing: 325      # up-river (NW-ish)
+  south_base_bearing: 145      # down-river (SE-ish)
+
+# Foliage correction: two seasonal states along the wooded corridor.
+# foliage_depth_m = effective vegetation depth intercepting the path. These are
+# ESTIMATES for a river/rail corridor with intermittent tree cover; they are
+# the dominant assumption in the seasonal comparison and should be treated as
+# first-order. Summer = full leaf; leaf-off = bare branches/trunks only.
+foliage:
+  summer_depth_m: 30           # full-leaf effective depth through corridor trees
+  leaf_off_depth_m: 10         # winter: trunks/branches only, ~1/3 effective depth
+
+# Usable-signal verdict thresholds at the HT (received power, dBm).
+thresholds_dbm:
+  solid: -100                  # >= -100 : full quieting / easy copy
+  usable: -110                 # -100..-110 : readable, some noise
+  marginal: -118               # -110..-118 : breaking up; < -118 : DEAD

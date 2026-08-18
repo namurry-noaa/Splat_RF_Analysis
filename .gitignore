@@ -44,6 +44,14 @@ outputs/*
 *.scf
 *-site_report.txt
 
+# --- Report deliverables ARE tracked (re-include after the broad ignores) ---
+# Figures + KML overlays + study CSV under reports/ and studies/ are committed
+# so the repo carries the analysis, per "meat lives in the repo".
+!reports/figures/**/*.png
+!reports/figures/**/*.kml
+!reports/**/*.pdf
+!studies/**/*.csv
+
 # --- Python -----------------------------------------------------------------
 __pycache__/
 *.py[cod]
