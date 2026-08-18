@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+<name>Muddy Run corridor - 2m 146.1</name>
+    <Placemark>
+      <name>Comm Wagon (TX)</name>
+      <description><![CDATA[Mobile repeat TX, 2m 146.1]]></description>
+      <Style><IconStyle><color>ffff0000</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.2963533,39.8059656,0</coordinates></Point>
+    </Placemark>
+
+<Folder><name>NORTH</name>
+<Placemark><name>NORTH corridor</name>
+          <Style><LineStyle><color>ffcccccc</color><width>2</width></LineStyle></Style>
+          <LineString><coordinates>-76.2963533,39.8059656,0 -76.3055000,39.8109000,0 -76.3144000,39.8164000,0 -76.3241000,39.8212000,0 -76.3410000,39.8322000,0 -76.3477000,39.8396000,0 -76.3515000,39.8476000,0 -76.3578000,39.8552000,0</coordinates></LineString></Placemark>
+    <Placemark>
+      <name>N1 SOLID</name>
+      <description><![CDATA[2m 146.1 | NORTH WP1<br/>path 0.95 km<br/>dBm terrain: -39.1<br/>dBm summer:  -44.8 (SOLID)<br/>dBm leaf-off:-41.7 (SOLID)<br/>mode: Double Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.3055000,39.8109000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>N2 SOLID</name>
+      <description><![CDATA[2m 146.1 | NORTH WP2<br/>path 1.93 km<br/>dBm terrain: -69.6<br/>dBm summer:  -75.3 (SOLID)<br/>dBm leaf-off:-72.2 (SOLID)<br/>mode: Double Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.3144000,39.8164000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>N3 SOLID</name>
+      <description><![CDATA[2m 146.1 | NORTH WP3<br/>path 2.91 km<br/>dBm terrain: -54.3<br/>dBm summer:  -60.0 (SOLID)<br/>dBm leaf-off:-56.9 (SOLID)<br/>mode: Double Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.3241000,39.8212000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>N5 SOLID</name>
+      <description><![CDATA[2m 146.1 | NORTH WP5<br/>path 4.8 km<br/>dBm terrain: -71.5<br/>dBm summer:  -77.2 (SOLID)<br/>dBm leaf-off:-74.1 (SOLID)<br/>mode: Double Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.3410000,39.8322000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>N6 SOLID</name>
+      <description><![CDATA[2m 146.1 | NORTH WP6<br/>path 5.76 km<br/>dBm terrain: -86.4<br/>dBm summer:  -92.1 (SOLID)<br/>dBm leaf-off:-89.0 (SOLID)<br/>mode: Double Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.3477000,39.8396000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>N7 SOLID</name>
+      <description><![CDATA[2m 146.1 | NORTH WP7<br/>path 6.61 km<br/>dBm terrain: -90.6<br/>dBm summer:  -96.3 (SOLID)<br/>dBm leaf-off:-93.2 (SOLID)<br/>mode: Double Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.3515000,39.8476000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>N8 USABLE</name>
+      <description><![CDATA[2m 146.1 | NORTH WP8<br/>path 7.58 km<br/>dBm terrain: -96.7<br/>dBm summer:  -102.4 (USABLE)<br/>dBm leaf-off:-99.3 (SOLID)<br/>mode: Double Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00d2ff</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.3578000,39.8552000,0</coordinates></Point>
+    </Placemark>
+
+</Folder>
+<Folder><name>SOUTH</name>
+<Placemark><name>SOUTH corridor</name>
+          <Style><LineStyle><color>ffcccccc</color><width>2</width></LineStyle></Style>
+          <LineString><coordinates>-76.2963533,39.8059656,0 -76.2899000,39.7985000,0 -76.2832000,39.7911000,0 -76.2764000,39.7838000,0 -76.2697000,39.7764000,0 -76.2630000,39.7691000,0 -76.2563000,39.7617000,0 -76.2496000,39.7544000,0 -76.2429000,39.7470000,0</coordinates></LineString></Placemark>
+    <Placemark>
+      <name>S1 SOLID</name>
+      <description><![CDATA[2m 146.1 | SOUTH WP1<br/>path 1.0 km<br/>dBm terrain: -48.4<br/>dBm summer:  -54.1 (SOLID)<br/>dBm leaf-off:-51.0 (SOLID)<br/>mode: Single Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.2899000,39.7985000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>S2 SOLID</name>
+      <description><![CDATA[2m 146.1 | SOUTH WP2<br/>path 2.0 km<br/>dBm terrain: -66.0<br/>dBm summer:  -71.7 (SOLID)<br/>dBm leaf-off:-68.6 (SOLID)<br/>mode: Single Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.2832000,39.7911000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>S3 SOLID</name>
+      <description><![CDATA[2m 146.1 | SOUTH WP3<br/>path 3.0 km<br/>dBm terrain: -73.5<br/>dBm summer:  -79.2 (SOLID)<br/>dBm leaf-off:-76.1 (SOLID)<br/>mode: Single Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.2764000,39.7838000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>S4 SOLID</name>
+      <description><![CDATA[2m 146.1 | SOUTH WP4<br/>path 3.99 km<br/>dBm terrain: -79.4<br/>dBm summer:  -85.1 (SOLID)<br/>dBm leaf-off:-82.0 (SOLID)<br/>mode: Single Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.2697000,39.7764000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>S5 SOLID</name>
+      <description><![CDATA[2m 146.1 | SOUTH WP5<br/>path 4.99 km<br/>dBm terrain: -83.8<br/>dBm summer:  -89.5 (SOLID)<br/>dBm leaf-off:-86.4 (SOLID)<br/>mode: Single Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.2630000,39.7691000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>S6 SOLID</name>
+      <description><![CDATA[2m 146.1 | SOUTH WP6<br/>path 5.99 km<br/>dBm terrain: -85.6<br/>dBm summer:  -91.3 (SOLID)<br/>dBm leaf-off:-88.2 (SOLID)<br/>mode: Single Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.2563000,39.7617000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>S7 SOLID</name>
+      <description><![CDATA[2m 146.1 | SOUTH WP7<br/>path 6.99 km<br/>dBm terrain: -87.1<br/>dBm summer:  -92.8 (SOLID)<br/>dBm leaf-off:-89.7 (SOLID)<br/>mode: Single Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.2496000,39.7544000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>S8 SOLID</name>
+      <description><![CDATA[2m 146.1 | SOUTH WP8<br/>path 7.99 km<br/>dBm terrain: -88.2<br/>dBm summer:  -93.8 (SOLID)<br/>dBm leaf-off:-90.8 (SOLID)<br/>mode: Single Horizon Diffraction Dominant]]></description>
+      <Style><IconStyle><color>ff00c800</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+      </IconStyle></Style>
+      <Point><coordinates>-76.2429000,39.7470000,0</coordinates></Point>
+    </Placemark>
+
+</Folder>
+</Document></kml>
