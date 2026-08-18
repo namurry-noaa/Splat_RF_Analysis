@@ -100,4 +100,11 @@ cp config/bands.example.yml     config/bands.local.yml
 
 ## License
 
-TBD before public release.
+**MIT License** — see [`LICENSE`](LICENSE). Copyright (c) 2026 Nate Murry.
+
+Note on SPLAT!: this project *invokes* SPLAT! (`splat` / `splat-hd`) as a
+separate command-line binary; it does not incorporate or link SPLAT!'s source
+code. SPLAT! is independently licensed under the GNU GPL v2 by its author
+(John Magliacane, KD2BD). Running a separately-licensed binary as an external
+process does not extend SPLAT!'s copyleft to this MIT-licensed orchestration
+layer.
